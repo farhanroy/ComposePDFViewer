@@ -17,7 +17,7 @@ class FileSource(private val file: File) {
         for (i in 0 until renderer.pageCount) {
             val page = renderer.openPage(i)
             val bitmap =
-                Bitmap.createBitmap(500, 650, Bitmap.Config.ARGB_8888)
+                Bitmap.createBitmap(page.width*2, page.height*2, Bitmap.Config.ARGB_8888)
             page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
             imageList.add(bitmap.asImageBitmap())
             page.close()

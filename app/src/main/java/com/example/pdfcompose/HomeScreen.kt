@@ -8,6 +8,7 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.material.Button
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
@@ -27,7 +28,9 @@ fun HomeScreen() {
         pdfUri = uri
     }
     
-    Button(onClick = { launcherPDF.launch("application/pdf") }) {}
+    Button(onClick = { launcherPDF.launch("application/pdf") }) {
+        Text("Open file")
+    }
 
     val context = LocalContext.current
 
